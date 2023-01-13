@@ -1,0 +1,46 @@
+{
+  "name": "cypresstutorial2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "bddTest": "node_modules\\.bin\\cypress-tags run",
+    "smokebddTest": "-e TAGS=\"@Smoke\" --headed --browser chrome",
+    "regressionbddTest": "-e TAGS=\"@Regression\" --headed --browser chrome",
+    "headedTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest": "npm run test -- --record --key 9c9713d0-42be-41df-a44b-ddf65d7199a7",
+    "singleTest": "npm run test -- --spec cypress/integration/e2e/basics2.js",
+    "e2eTest": "npm run test -- --spec cypress/integration/e2e/*",
+    "greenKartTest": "npm run test -- --spec cypress/integration/greenKart/*",
+    "frameworkTest": "npm run test -- --spec cypress/integration/framework/*"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.10.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "mocha": "^5.2.0",
+    "mochawesome": "^4.0.1",
+    "cypress-iframe": "^1.0.1",
+    "cypress-sql-server": "^1.0.0",
+    "multiple-cucumber-html-reporter": "^3.0.1",
+    "neat-csv": "5.1.0",
+    "mysql": "^2.18.1"
+  },
+  "dependencies": {
+    "cypress": "^10.10.0",
+    "package.json": "^2.0.1",
+    "mochawesome": "^7.1.3"
+  }
+}

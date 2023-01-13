@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-09T13:07:12.769Z",
+    "end": "2022-11-09T13:07:28.084Z",
+    "duration": 15315,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2a313e27-ac36-4a5e-8c58-199ff8178de4",
+      "title": "",
+      "fullFile": "cypress\\integration\\e2e\\basics2.js",
+      "file": "cypress\\integration\\e2e\\basics2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3c9f0f77-2fe8-45a2-a5fb-6b92327b0125",
+          "title": "My Second Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My Second Testcase",
+              "fullTitle": "My Second Test My Second Testcase",
+              "timedOut": null,
+              "duration": 11354,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(Cypress.env(\"baseUrl\") + \"/AutomationPractice/\");\n//the .check command\n//check box\ncy.get(\"#checkBoxOption1\").check().should(\"be.checked\").and(\"have.value\", \"option1\");\ncy.get(\"#checkBoxOption1\").uncheck().should(\"not.be.checked\");\ncy.get(\"input[type='checkbox']\").check([\"option2\", \"option3\"]);\n//static dropdown menu\ncy.get(\"select\").select(\"option2\").should(\"have.value\", \"option2\");\n//dynamic dropdown menu/Autocomplete\ncy.get(\"input#autocomplete\").type(\"Unit\");\ncy.get(\".ui-menu-item\").each(function ($el, index, $list) {\n  if ($el.text() === \"United Kingdom (UK)\") {\n    $el.click();\n  }\n});\ncy.get(\"input#autocomplete\").should(\"have.value\", \"United Kingdom (UK)\");\n//hidden text\ncy.get(\"input#displayed-text\").as(\"displayedLocator\");\ncy.get(\"@displayedLocator\").should(\"be.visible\");\ncy.get(\"input#hide-textbox\").click();\ncy.get(\"@displayedLocator\").should(\"not.be.visible\");\ncy.get(\"input#show-textbox\").click();\ncy.get(\"@displayedLocator\").should(\"be.visible\");\n//radio buttons\ncy.get(\"[value='radio1']\").check().should(\"be.checked\");",
+              "err": {},
+              "uuid": "a9a461eb-6c17-4f0d-a1bd-83a0ffeb6f21",
+              "parentUUID": "3c9f0f77-2fe8-45a2-a5fb-6b92327b0125",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a9a461eb-6c17-4f0d-a1bd-83a0ffeb6f21"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11354,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
